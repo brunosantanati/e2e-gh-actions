@@ -5,9 +5,12 @@ import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class E2eTests {
+public class E2eTest {
 
-    public static final String API_URL = System.getenv("API_URL");
+    //To run it via command line:
+    //mvn -DargLine="-DAPI_URL=https://java-crud-gh-actions-ktptbevp5q-uc.a.run.app" compile test
+
+    public static final String API_URL = System.getProperty("API_URL");
 
     @Test
     public void shouldGetAllProducts() {
